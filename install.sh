@@ -62,11 +62,14 @@ if [ -f "$HOME/.local/bin/uv" ]; then
 	rm -f "$HOME/.local/bin/uvx"
 fi
 
+# install aur packages
+yay -S --needed --noconfirm - < pacman.txt
+
 # install uv
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
-# install remaining packages
-yay -S --needed --noconfirm - < pacman.txt
+# install laravel sail globally
+composer global require laravel/sail
 
 # move nvim config
 sync nvim "$HOME/.config/"
@@ -85,6 +88,21 @@ sync waybar "$HOME/.config/"
 
 # return to original directory
 cd "$CURRENT_DIR"
+
+# setup docker
+# if the docker group doesn't exist, create it
+if ! grep -q docker /etc/group; then
+    sudo groupadd docker
+fi
+
+# if the user is not in the docker group, add them
+if ! id -Gn | grep -qw docker; then
+    sudo usermod -aG docker $USER
+fi
+
+# start docker daemon
+sudo systemctl enable docker.service
+sudo systemctl enable containerd.service
 
 # done
 echo "Installation complete. Please restart your terminal for changes to take effect."

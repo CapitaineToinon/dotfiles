@@ -103,9 +103,6 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# laravel sail, the docker thingy
-alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
-
 # nvim
 alias vi="nvim"
 alias vim="nvim"
@@ -132,6 +129,9 @@ fi
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - zsh)"
+
+# add composer global bin to path
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
 # load env
 . "$HOME/.local/bin/env"

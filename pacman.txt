@@ -7,7 +7,10 @@ bluez-utils
 btop
 cage
 clonehero
+composer
 discord
+docker
+docker-compose
 dolphin
 dunst
 efibootmgr
@@ -23,6 +26,7 @@ gst-plugin-pipewire
 htop
 hyprland
 hyprpaper
+hyprshot
 intel-media-driver
 iwd
 kitty
@@ -55,6 +59,7 @@ otf-monaspace-nerd
 otf-opendyslexic-nerd
 otf-overpass-nerd
 pavucontrol
+php
 pipewire
 pipewire-alsa
 pipewire-docs
