@@ -13,12 +13,12 @@ config.enable_kitty_keyboard = true
 -- automatically switch theme based on os theme
 -- useful for dynamic theme
 local appearance_themes = {
-	Light = "vscode-light",
-	Dark = "vscode-dark",
+	-- Light = "vscode-light",
+	-- Dark = "vscode-dark",
 	-- Light = "Vs Code Light+ (Gogh)",
 	-- Dark = "Vs Code Dark+ (Gogh)",
-	-- Light = "Catppuccin Latte",
-	-- Dark = "Catppuccin Mocha",
+	Light = "Catppuccin Latte",
+	Dark = "Catppuccin Mocha",
 }
 
 local appearance = wezterm.gui.get_appearance()
