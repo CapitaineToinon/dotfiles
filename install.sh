@@ -10,24 +10,11 @@ CURRENT_DIR=$(pwd)
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
-# prevent script from running as root
-if [[ $EUID == 0 ]]; then
-    echo "This script should not be run as root. Aborting."
-    exit 1
-fi
+# import common.sh
+. ./common.sh
 
-# exit if the user that ran originally was root
-# by checking if HOME is /root
-if [[ "$HOME" == "/root" ]]; then
-    echo "This script should not be run as root. Aborting."
-    exit 1
-fi
-
-# exit if HOME is empty, not set, / or not a directory
-if [[ -z "$HOME" || "$HOME" == "/" || ! -d "$HOME" ]]; then
-    echo "HOME is not set or is not a directory. Aborting."
-    exit 1
-fi
+# validate environment
+validate_environment
 
 # ensure pacman exsists, error otherwise
 command -v pacman >/dev/null 2>&1 || { echo >&2 "I require pacman but it's not installed. Aborting."; exit 1; }
@@ -82,16 +69,19 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 yay -S --needed --noconfirm - < pacman.txt
 
 # move nvim config
-rsync -a --delete nvim "$HOME/.config/"
+sync nvim "$HOME/.config/"
 
 # move wezterm config
-rsync -a --delete wezterm "$HOME/.config/"
+sync wezterm "$HOME/.config/"
 
 # move hypr config
-rsync -a --delete hypr "$HOME/.config/"
+sync hypr "$HOME/.config/"
 
 # move kitty config
-rsync -a --delete kitty "$HOME/.config/"
+sync kitty "$HOME/.config/"
+
+# move waybar config
+sync waybar "$HOME/.config/"
 
 # return to original directory
 cd "$CURRENT_DIR"

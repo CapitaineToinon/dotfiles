@@ -30,7 +30,8 @@ return {
 						plugins = {
 							{
 								name = "@vue/typescript-plugin",
-								location = "/Users/user/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server",
+								location =
+								"/Users/user/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server",
 								languages = { "vue" },
 							},
 						},

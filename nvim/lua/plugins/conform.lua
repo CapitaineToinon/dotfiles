@@ -32,6 +32,7 @@ return {
 				typescriptreact = { "prettier" },
 				typst = { "tinymist" },
 				json = { "prettier" },
+				jsonc = { "prettier" },
 				yaml = { "yamlfix" },
 				vue = { "prettier" },
 			},
