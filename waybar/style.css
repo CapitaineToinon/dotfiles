@@ -1,22 +1,20 @@
-@import "./themes/mocha.css";
+@import "./themes/frappe.css";
 
 * {
   font-family: FiraCode Nerd Font;
-  font-size: 14px;
+  font-size: 16px;
   min-height: 0;
 }
 
 #waybar {
   background: transparent;
   color: @text;
-  margin: 0;
 }
 
 #workspaces {
   border-radius: 1rem;
-  margin: 5px;
   background-color: @surface0;
-  margin-left: 1rem;
+  padding: 0 0.25rem;
 }
 
 #workspaces button {
@@ -39,60 +37,31 @@
 #tray,
 #backlight,
 #clock,
-#battery,
+#cpu,
 #pulseaudio,
 #custom-search {
   background-color: @surface0;
-  padding: 0.5rem 1rem;
-  margin: 5px 0;
+  padding: 0rem 10px;
 }
 
 #clock {
   color: @blue;
   border-radius: 0px 1rem 1rem 0px;
-  margin-right: 1rem;
-}
-
-#battery {
-  color: @green;
-}
-
-#battery.charging {
-  color: @green;
-}
-
-#battery.warning:not(.charging) {
-  color: @red;
-}
-
-#backlight {
-  color: @yellow;
-}
-
-#backlight,
-#battery {
-  border-radius: 0;
+  margin-right: 5px;
 }
 
 #pulseaudio {
   color: @maroon;
   border-radius: 1rem 0px 0px 1rem;
-  margin-left: 1rem;
 }
 
-#custom-music {
-  color: @mauve;
+#tray {
+  margin-right: 5px;
   border-radius: 1rem;
 }
 
 #custom-search {
-  margin-right: 1rem;
   border-radius: 1rem;
-  padding-right: 1.25rem;
+  padding-right: 1rem;
   color: @red;
-}
-
-#tray {
-  margin-right: 1rem;
-  border-radius: 1rem;
 }
