@@ -10,6 +10,7 @@ clonehero
 composer
 discord
 docker
+docker-buildx
 docker-compose
 dolphin
 dunst
@@ -72,6 +73,7 @@ qt6-wayland
 r2modman
 rsync
 rustup
+slack-desktop
 slurp
 smartmontools
 steam

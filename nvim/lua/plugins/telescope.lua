@@ -17,22 +17,21 @@ return {
 		{
 			"<leader>f",
 			function()
-				-- local cwd = vim.fn.getcwd()
-				--
-				-- if working_tree_cache[cwd] == nil then
-				-- 	vim.fn.system("git rev-parse --is-inside-work-tree")
-				-- 	working_tree_cache[cwd] = vim.v.shell_error == 0
-				-- end
-				--
-				-- if working_tree_cache[cwd] then
-				-- 	require("telescope.builtin").git_files({
-				-- 		use_git_root = false,
-				-- 		show_untracked = true,
-				-- 	})
-				-- else
-				-- 	require("telescope.builtin").find_files()
-				-- end
-				require("telescope.builtin").find_files()
+				local cwd = vim.fn.getcwd()
+
+				if working_tree_cache[cwd] == nil then
+					vim.fn.system("git rev-parse --is-inside-work-tree")
+					working_tree_cache[cwd] = vim.v.shell_error == 0
+				end
+
+				if working_tree_cache[cwd] then
+					require("telescope.builtin").git_files({
+						use_git_root = false,
+						show_untracked = true,
+					})
+				else
+					require("telescope.builtin").find_files()
+				end
 			end,
 			desc = "Telescope find files",
 		},
