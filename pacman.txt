@@ -24,6 +24,7 @@ greetd-gtkgreet
 greetd-tuigreet
 grim
 gst-plugin-pipewire
+hexchat
 htop
 hyprland
 hyprpaper
@@ -32,6 +33,7 @@ intel-media-driver
 iwd
 kitty
 lazygit
+libmpeg2
 libpulse
 libva-intel-driver
 linux
@@ -137,6 +139,8 @@ unzip
 uwsm
 vicinae-bin
 vim
+vlc
+vlc-plugin-ffmpeg
 vulkan-intel
 vulkan-nouveau
 vulkan-radeon

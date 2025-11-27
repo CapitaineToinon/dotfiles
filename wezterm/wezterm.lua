@@ -21,8 +21,10 @@ local appearance_themes = {
 	Dark = "Catppuccin Mocha",
 }
 
-local appearance = wezterm.gui.get_appearance()
-config.color_scheme = appearance_themes[appearance]
+-- local appearance = wezterm.gui.get_appearance()
+-- config.color_scheme = appearance_themes[appearance]
+
+config.color_scheme = appearance_themes.Dark
 
 -- change the window padding
 config.window_padding = {
@@ -41,7 +43,7 @@ config.keys = {
 }
 
 config.window_decorations = "RESIZE"
-config.font = wezterm.font("FiraCode Nerd Font")
+config.font = wezterm.font("JetBrainsMono Nerd Font Mono")
 config.send_composed_key_when_left_alt_is_pressed = true
 config.hide_tab_bar_if_only_one_tab = true
 config.window_close_confirmation = "NeverPrompt"
