@@ -7,7 +7,7 @@
   "margin-left": 10,
   "modules-left": ["hyprland/workspaces"],
   "modules-center": [],
-  "modules-right": ["pulseaudio", "clock", "tray", "custom/search"],
+  "modules-right": ["pulseaudio", "clock", "tray"],
   "hyprland/workspaces": {
     "format": "{name}",
   },
@@ -15,20 +15,15 @@
     "icon-size": 21,
     "spacing": 5,
   },
-  "cpu": {
-    "interval": 10,
-    "format": "{}% ",
-    "max-length": 10,
-  },
   "clock": {
     "timezone": "Europe/Paris",
     "tooltip": false,
-    "format-alt": " {:%d/%m/%Y}",
-    "format": " {:%H:%M}",
+    "format-alt": " {:%d/%m/%Y}",
+    "format": " {:%H:%M}",
   },
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
-    "format": "{icon} {volume}%",
+    "format": "{icon} {volume}%",
     "format-muted": "",
     "format-icons": {
       "default": ["", "", ""],
