@@ -107,6 +107,7 @@ fi
 alias vi="nvim"
 alias vim="nvim"
 alias v="nvim"
+alias s="session"
 
 # fixes colors for tmux
 alias tmux='tmux -2'
