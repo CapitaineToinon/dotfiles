@@ -22,6 +22,10 @@ validate_environment() {
 }
 
 sync() {
-	rsync -a --delete "$1" "$2"
+    local from="$1"
+    local to="$2"
+    shift 2
+
+	rsync -a --delete "$@" "$from" "$to"
 }
 

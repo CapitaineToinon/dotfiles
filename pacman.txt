@@ -4,8 +4,11 @@ base
 base-devel
 bluez
 bluez-utils
-btop
 cage
+catppuccin-cursors-frappe
+catppuccin-cursors-latte
+catppuccin-cursors-macchiato
+catppuccin-cursors-mocha
 clonehero
 composer
 discord
@@ -16,6 +19,7 @@ dunst
 efibootmgr
 evtest
 firefox
+fzf
 git
 go
 greetd
@@ -23,6 +27,7 @@ greetd-gtkgreet
 greetd-tuigreet
 grim
 gst-plugin-pipewire
+gum
 hexchat
 htop
 hyprland
@@ -41,6 +46,7 @@ linux-headers
 lshw
 man-db
 man-pages
+mpv
 nano
 nautilus
 neofetch
@@ -75,6 +81,7 @@ qt6-wayland
 r2modman
 rsync
 rustup
+sesh-bin
 slack-desktop
 slurp
 smartmontools
@@ -144,6 +151,7 @@ vlc-plugin-ffmpeg
 vulkan-intel
 vulkan-nouveau
 vulkan-radeon
+vulkan-tools
 waybar
 wezterm
 wget
@@ -160,6 +168,5 @@ xone-dkms
 xone-dongle-firmware
 xorg-xinit
 yay
-yay-debug
 zram-generator
 zsh

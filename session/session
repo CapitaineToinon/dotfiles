@@ -1,0 +1,18 @@
+#!/bin/bash
+
+set -e
+
+SESSION=$(sesh list --icons | fzf-tmux \
+		--no-sort --ansi --border-label ' sesh ' --prompt '⚡  ' \
+		--header '^x tmux kill' \
+		--bind 'tab:down,btab:up' \
+		--bind 'ctrl-x:execute(tmux kill-session -t {2..})+change-prompt(⚡  )+reload(sesh list --icons)' \
+		--reverse
+)
+
+if [ -n "$SESSION" ]; then
+		sesh connect "$SESSION"
+fi
+
+exit $?
+

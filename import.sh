@@ -34,6 +34,9 @@ sync "$HOME/.config/kitty" .
 # waybar
 sync "$HOME/.config/waybar" .
 
+# tmux
+sync "$HOME/.config/tmux" . --exclude="plugins"
+
 # return to original directory
 cd "$CURRENT_DIR"
 

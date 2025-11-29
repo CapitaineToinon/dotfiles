@@ -86,6 +86,16 @@ sync kitty "$HOME/.config/"
 # move waybar config
 sync waybar "$HOME/.config/"
 
+# move tmux config
+sync tmux "$HOME/.config/"
+
+# install tpm
+mkdir -p "$HOME/.config/tmux/plugins"
+git clone https://github.com/tmux-plugins/tpm "$HOME/.config/tmux/plugins/tpm"
+
+# install session script
+cp session/session "/usr/local/bin/session"
+
 # return to original directory
 cd "$CURRENT_DIR"
 
