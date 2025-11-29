@@ -16,6 +16,9 @@ cd "$SCRIPT_DIR"
 # validate environment
 validate_environment
 
+# packages
+pacman -Qqe > pacman.txt
+
 # nvim
 sync "$HOME/.config/nvim" .
 
