@@ -108,6 +108,7 @@ alias vi="nvim"
 alias vim="nvim"
 alias v="nvim"
 alias s="session"
+alias n="neofetch"
 alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
 
 # fixes colors for tmux

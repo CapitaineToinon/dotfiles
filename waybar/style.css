@@ -38,7 +38,8 @@
 #clock,
 #cpu,
 #pulseaudio,
-#custom-search {
+#custom-search,
+#custom-notification {
   background-color: @surface0;
 }
 
@@ -57,6 +58,12 @@
 }
 
 #tray {
+  border-radius: 1rem;
+  padding: 0 10px;
+  margin-right: 5px;
+}
+
+#custom-notification {
   border-radius: 1rem;
   padding: 0 10px;
 }
