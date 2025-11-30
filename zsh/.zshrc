@@ -108,6 +108,7 @@ alias vi="nvim"
 alias vim="nvim"
 alias v="nvim"
 alias s="session"
+alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
 
 # fixes colors for tmux
 alias tmux='tmux -2'
@@ -136,11 +137,3 @@ export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
 # load env
 . "$HOME/.local/bin/env"
-
-# TODO setup sail with docker?
-# docker run --rm \
-#     -u "$(id -u):$(id -g)" \
-#     -v "$(pwd):/var/www/html" \
-#     -w /var/www/html \
-#     laravelsail/php82-composer:latest \
-#     composer install --ignore-platform-reqs

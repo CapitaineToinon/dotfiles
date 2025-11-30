@@ -68,9 +68,6 @@ yay -S --needed --noconfirm - < pacman.txt
 # install uv
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
-# install laravel sail globally
-composer global require laravel/sail
-
 # move nvim config
 sync nvim "$HOME/.config/"
 
@@ -97,7 +94,7 @@ mkdir -p "$HOME/.config/tmux/plugins"
 git clone https://github.com/tmux-plugins/tpm "$HOME/.config/tmux/plugins/tpm"
 
 # install session script
-cp session/session "$HOME/.local/bin/session"
+cp scripts/session "$HOME/.local/bin/session"
 
 # return to original directory
 cd "$CURRENT_DIR"
@@ -113,7 +110,7 @@ if ! id -Gn | grep -qw docker; then
     sudo usermod -aG docker $USER
 fi
 
-# start docker daemon
+# enable docker daemon
 sudo systemctl enable docker.service
 sudo systemctl enable containerd.service
 
