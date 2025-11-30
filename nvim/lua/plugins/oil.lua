@@ -14,6 +14,8 @@ return {
 				desc = "Open file explorer",
 			},
 		},
+		lazy = false,
+		priority = 5000,
 		---@module 'oil'
 		---@type oil.SetupOpts
 		opts = {
@@ -22,7 +24,5 @@ return {
 				show_hidden = true,
 			},
 		},
-
-		config = true,
 	},
 }
