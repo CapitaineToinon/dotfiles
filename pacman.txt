@@ -5,10 +5,6 @@ base-devel
 bluez
 bluez-utils
 cage
-catppuccin-cursors-frappe
-catppuccin-cursors-latte
-catppuccin-cursors-macchiato
-catppuccin-cursors-mocha
 clonehero
 composer
 discord
@@ -21,6 +17,7 @@ evtest
 firefox
 fzf
 git
+gleam
 go
 greetd
 greetd-gtkgreet

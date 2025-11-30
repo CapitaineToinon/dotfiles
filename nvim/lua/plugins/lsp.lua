@@ -72,6 +72,7 @@ return {
 				},
 				astro = {},
 				jdtls = {},
+				gleam = {},
 			},
 		},
 		config = function(_, opts)
