@@ -78,7 +78,7 @@ return {
 		config = function(_, opts)
 			require("mason").setup()
 			require("mason-lspconfig").setup({
-				automatic_enable = false,
+				automatic_enable = true,
 				ensure_installed = opts.ensure_installed,
 			})
 
@@ -87,7 +87,6 @@ return {
 			for name, config in pairs(opts.servers) do
 				config = vim.tbl_deep_extend("force", config, { capabilities = capabilities })
 				vim.lsp.config(name, config)
-				vim.lsp.enable(name)
 			end
 		end,
 	},

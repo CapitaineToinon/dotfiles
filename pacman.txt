@@ -2,6 +2,7 @@ alsa-utils
 amd-ucode
 base
 base-devel
+bluetui
 bluez
 bluez-utils
 cage

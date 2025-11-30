@@ -35,7 +35,7 @@ sync "$HOME/.config/kitty" .
 sync "$HOME/.config/waybar" .
 
 # swaync
-sync "$HOME/.config/swaync"
+sync "$HOME/.config/swaync" .
 
 # tmux
 sync "$HOME/.config/tmux" . --exclude="plugins"
