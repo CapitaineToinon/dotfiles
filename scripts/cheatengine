@@ -1,0 +1,8 @@
+#!/bin/bash
+
+PTDE_PFX="/home/user/.steam/steam/steamapps/compatdata/211420/pfx"
+WINE="/home/user/.steam/steam/steamapps/common/Proton - Experimental/files/bin/wine"
+CE="/home/user/.wine/drive_c/Program Files/Cheat Engine/Cheat Engine.exe"
+
+WINEDLLOVERRIDES="winemenubuilder.exe=d" WINEFSYNC=1 WINEPREFIX="$PTDE_PFX" "$WINE" "$CE"
+
