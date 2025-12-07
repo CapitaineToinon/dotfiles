@@ -44,6 +44,7 @@ config.keys = {
 
 config.window_decorations = "RESIZE"
 config.font = wezterm.font("JetBrainsMono Nerd Font Mono")
+config.font_size = 16;
 config.send_composed_key_when_left_alt_is_pressed = true
 config.hide_tab_bar_if_only_one_tab = true
 config.window_close_confirmation = "NeverPrompt"
