@@ -2,6 +2,7 @@ local working_tree_cache = {}
 
 return {
 	"nvim-telescope/telescope.nvim",
+	lazy = true,
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
@@ -37,17 +38,23 @@ return {
 		},
 		{
 			"<leader>g",
-			require("telescope.builtin").live_grep,
+			function()
+				require("telescope.builtin").live_grep()
+			end,
 			desc = "Telescope find files",
 		},
 		{
 			"<leader>s",
-			require("telescope.builtin").lsp_document_symbols,
+			function()
+				require("telescope.builtin").lsp_document_symbols()
+			end,
 			desc = "Telescope find symbols",
 		},
 		{
 			"<leader>T",
-			require("telescope.builtin").colorscheme,
+			function()
+				require("telescope.builtin").colorscheme()
+			end,
 			desc = "Telescope find themes",
 		},
 		{
@@ -70,7 +77,9 @@ return {
 		},
 		{
 			"<leader>h",
-			require("telescope.builtin").help_tags,
+			function()
+				require("telescope.builtin").help_tags()
+			end,
 			desc = "Telescope find help",
 		},
 	},

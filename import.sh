@@ -17,28 +17,28 @@ cd "$SCRIPT_DIR"
 validate_environment
 
 # packages
-pacman -Qqe > pacman.txt
+pacman -Qqet > pacman.txt
 
 # nvim
 sync "$HOME/.config/nvim" .
 
-# wezterm
-sync "$HOME/.config/wezterm" .
+# ghostty
+sync "$HOME/.config/ghostty" .
 
 # hypr
 sync "$HOME/.config/hypr" .
-
-# kitty
-sync "$HOME/.config/kitty" .
 
 # waybar
 sync "$HOME/.config/waybar" .
 
 # swaync
-sync "$HOME/.config/swaync" .
+# sync "$HOME/.config/swaync" .
 
 # tmux
 sync "$HOME/.config/tmux" . --exclude="plugins"
+
+# vicinae
+sync "$HOME/.config/vicinae"
 
 # return to original directory
 cd "$CURRENT_DIR"

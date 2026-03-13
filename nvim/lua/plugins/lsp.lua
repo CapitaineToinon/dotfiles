@@ -19,6 +19,7 @@ return {
 				"ruff",
 				"zls",
 				"gopls",
+				"jsonls",
 			},
 			servers = {
 				lua_ls = {},
@@ -73,6 +74,12 @@ return {
 				astro = {},
 				jdtls = {},
 				gleam = {},
+				jsonls = function()
+					return {
+						schemas = require('schemastore').json.schemas(),
+						validate = { enable = true },
+					}
+				end
 			},
 		},
 		config = function(_, opts)
@@ -85,6 +92,7 @@ return {
 			local capabilities = require("blink.cmp").get_lsp_capabilities()
 
 			for name, config in pairs(opts.servers) do
+				config = type(config) == "function" and config() or config
 				config = vim.tbl_deep_extend("force", config, { capabilities = capabilities })
 				vim.lsp.config(name, config)
 			end

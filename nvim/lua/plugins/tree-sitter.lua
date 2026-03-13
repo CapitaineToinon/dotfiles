@@ -2,6 +2,8 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
+		lazy = false,
+		branch = 'master',
 		opts = {
 			ensure_installed = {
 				"php",
