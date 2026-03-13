@@ -8,15 +8,26 @@
   // Choose the order of the modules
   "modules-left": ["hyprland/workspaces", "hyprland/mode", "custom/media"],
   "modules-center": ["clock"],
-  "modules-right": ["pulseaudio", "power-profiles-daemon", "battery", "tray"],
+  "modules-right": [
+    "pulseaudio",
+    "power-profiles-daemon",
+    "battery",
+    "tray",
+    "custom/notification",
+  ],
   // Modules configuration
+  "hyprland/workspaces": {
+    "persistent-workspaces": {
+      "*": [1, 2, 3, 4],
+    },
+  },
   "tray": {
     "spacing": 10,
   },
   "clock": {
     // "timezone": "America/New_York",
     "tooltip": false,
-    "format-alt": "{:%Y-%m-%d}",
+    "format": "{:%A %H:%M}",
   },
   "battery": {
     "states": {
@@ -66,16 +77,24 @@
     },
     "on-click": "pavucontrol",
   },
-  "custom/media": {
-    "format": "{icon} {text}",
-    "return-type": "json",
-    "max-length": 40,
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
     "format-icons": {
-      "spotify": "",
-      "default": "🎜",
+      "notification": "󱅫",
+      "none": "󰂜",
+      "dnd-notification": "󰂠",
+      "dnd-none": "󰪓",
+      "inhibited-notification": "󰂛",
+      "inhibited-none": "󰪑",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰪑",
     },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
     "escape": true,
-    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null", // Script in resources folder
-    // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
   },
 }

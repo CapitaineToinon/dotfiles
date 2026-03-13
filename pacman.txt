@@ -1,9 +1,9 @@
 base
 bluez-utils
 brightnessctl
+btop
 cups
 discord
-dunst
 efibootmgr
 fastfetch
 firefox
@@ -14,6 +14,7 @@ ghostty
 hyprland
 hyprpaper
 intel-ucode
+lazygit
 nautilus
 neovim
 network-manager-applet
@@ -36,7 +37,9 @@ polkit-kde-agent
 qt6-wayland
 rsync
 slack-desktop
+socat
 sof-firmware
+swaync
 system-config-printer
 tmux
 ttf-0xproto-nerd

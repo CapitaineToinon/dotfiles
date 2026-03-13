@@ -17,7 +17,7 @@ cd "$SCRIPT_DIR"
 validate_environment
 
 # packages
-pacman -Qqet > pacman.txt
+pacman -Qqet >pacman.txt
 
 # nvim
 sync "$HOME/.config/nvim" .
@@ -32,7 +32,7 @@ sync "$HOME/.config/hypr" .
 sync "$HOME/.config/waybar" .
 
 # swaync
-# sync "$HOME/.config/swaync" .
+sync "$HOME/.config/swaync" .
 
 # tmux
 sync "$HOME/.config/tmux" . --exclude="plugins"
@@ -45,4 +45,3 @@ cd "$CURRENT_DIR"
 
 # done
 echo "Import complete."
-

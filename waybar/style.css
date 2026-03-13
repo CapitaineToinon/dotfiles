@@ -129,12 +129,9 @@ label:focus {
 #pulseaudio.muted {
 }
 
-#custom-media.custom-spotify {
-  background-color: #66cc99;
-}
-
-#custom-media.custom-vlc {
-  background-color: #ffa000;
+#custom-notification {
+  padding-top: 2px;
+  padding-right: 10px;
 }
 
 #tray {

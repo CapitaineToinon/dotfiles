@@ -35,6 +35,8 @@ return {
 				jsonc = { "prettier" },
 				yaml = { "yamlfix" },
 				vue = { "prettier" },
+				bash = { "shfmt" },
+				sh = { "shfmt" },
 			},
 			default_format_opts = {
 				lsp_format = "fallback",
