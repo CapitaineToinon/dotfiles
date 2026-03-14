@@ -38,10 +38,10 @@ sync "$HOME/.config/swaync" .
 sync "$HOME/.config/tmux" . --exclude="plugins"
 
 # vicinae
-sync "$HOME/.config/vicinae"
+sync "$HOME/.config/vicinae" .
 
 # zsh
-cp "$HOME/.zshrc" "zsh/"
+cp "$HOME/.zshrc" "zsh/.zshrc"
 
 # return to original directory
 cd "$CURRENT_DIR"
