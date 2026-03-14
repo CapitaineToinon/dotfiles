@@ -82,11 +82,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='nvim'
-fi
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='nvim'
+# fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
@@ -102,39 +102,9 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# nvim
-alias vi="nvim"
-alias vim="nvim"
 alias v="nvim"
-alias s="session"
-alias n="neofetch"
-alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
 
-# fixes colors for tmux
-alias tmux='tmux -2'
+# fast node manager
+eval "$(fnm env --use-on-cd --shell zsh)"
 
-# my damaged windows brain
-alias cls='clear'
-
-# other shortcuts
-alias lg='lazygit'
-alias why='why3'
-
-# fnm - fast node manager
-FNM_PATH="$HOME/.local/share/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="$FNM_PATH:$PATH"
-  eval "`fnm env`"
-fi
-
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"
-
-# add composer global bin to path
-export PATH="$HOME/.config/composer/vendor/bin:$PATH"
-
-# load env
 . "$HOME/.local/bin/env"

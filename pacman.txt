@@ -4,6 +4,7 @@ brightnessctl
 btop
 cups
 discord
+docker
 efibootmgr
 fastfetch
 firefox
