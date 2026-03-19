@@ -52,3 +52,5 @@ font-family = FiraMono Nerd Font
 theme = "Catppuccin Latte"
 confirm-close-surface = false
 resize-overlay = never
+clipboard-read = allow
+clipboard-write = allow
