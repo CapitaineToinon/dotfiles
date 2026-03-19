@@ -37,5 +37,14 @@ vim.filetype.add({
 	},
 })
 
+-- spell check stuff
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "markdown",
+	callback = function()
+		vim.opt_local.spell = true
+		vim.opt_local.spelllang = { "en_us" }
+	end,
+})
+
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1

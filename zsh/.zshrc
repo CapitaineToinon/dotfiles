@@ -103,8 +103,19 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias v="nvim"
+alias s="~/scripts/session"
+alias c="clear"
+
+# laravel sail
+alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
 
 # fast node manager
 eval "$(fnm env --use-on-cd --shell zsh)"
 
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
+
+# ready
 . "$HOME/.local/bin/env"
