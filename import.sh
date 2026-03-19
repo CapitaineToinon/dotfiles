@@ -17,31 +17,31 @@ cd "$SCRIPT_DIR"
 validate_environment
 
 # packages
-pacman -Qqet >pacman.txt
+gum confirm "Do you wish to import your pacman packages too?" && pacman -Qqet >pacman.txt
 
 # nvim
-sync "$HOME/.config/nvim" .
+sync "$HOME/.config/nvim" "$SCRIPT_DIR"
 
 # ghostty
-sync "$HOME/.config/ghostty" .
+sync "$HOME/.config/ghostty" "$SCRIPT_DIR"
 
 # hypr
-sync "$HOME/.config/hypr" .
+sync "$HOME/.config/hypr" "$SCRIPT_DIR"
 
 # waybar
-sync "$HOME/.config/waybar" .
+sync "$HOME/.config/waybar" "$SCRIPT_DIR"
 
 # swaync
-sync "$HOME/.config/swaync" .
+sync "$HOME/.config/swaync" "$SCRIPT_DIR"
 
 # tmux
-sync "$HOME/.config/tmux" . --exclude="plugins"
+sync "$HOME/.config/tmux" "$SCRIPT_DIR" --exclude="plugins"
 
 # vicinae
-sync "$HOME/.config/vicinae" .
+sync "$HOME/.config/vicinae" "$SCRIPT_DIR"
 
 # zsh
-cp "$HOME/.zshrc" "zsh/.zshrc"
+cp "$HOME/.zshrc" "$SCRIPT_DIR/zsh/.zshrc"
 
 # return to original directory
 cd "$CURRENT_DIR"

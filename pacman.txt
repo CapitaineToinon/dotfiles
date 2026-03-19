@@ -1,8 +1,9 @@
+amd-ucode
 base
 bluez-utils
 brightnessctl
 btop
-cups
+clonehero
 discord
 docker
 efibootmgr
@@ -12,6 +13,7 @@ flameshot
 fnm
 fprintd
 ghostty
+gum
 hyprland
 hyprpaper
 intel-ucode
@@ -33,8 +35,10 @@ otf-hermit-nerd
 otf-monaspace-nerd
 otf-opendyslexic-nerd
 otf-overpass-nerd
-pavucontrol
 polkit-kde-agent
+preload
+proton-ge-custom-bin
+protontricks
 qt6-wayland
 rsync
 slack-desktop
@@ -99,11 +103,12 @@ ttf-ubuntu-mono-nerd
 ttf-ubuntu-nerd
 ttf-victor-mono-nerd
 ttf-zed-mono-nerd
-unzip
 vicinae-bin
 vim
 waybar
 wget
+wireless_tools
+wiremix
 woff2-font-awesome
 xf86-video-amdgpu
 xf86-video-ati
@@ -112,4 +117,5 @@ xorg-server
 xorg-xinit
 yay
 yay-debug
+zip
 zram-generator

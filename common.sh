@@ -28,3 +28,7 @@ sync() {
 
 	rsync -a --delete "$@" "$from" "$to"
 }
+
+info() {
+	gum log --level info "$@"
+}
