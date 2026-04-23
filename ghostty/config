@@ -48,9 +48,15 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 
-font-family = FiraMono Nerd Font
+font-family = Maple Mono
 theme = "Catppuccin Latte"
 confirm-close-surface = false
 resize-overlay = never
 clipboard-read = allow
 clipboard-write = allow
+
+# Font size zoom
+keybind = ctrl+shift+equal=increase_font_size:1
+keybind = ctrl+shift+plus=increase_font_size:1
+keybind = ctrl+shift+minus=decrease_font_size:1
+keybind = ctrl+shift+zero=reset_font_size
