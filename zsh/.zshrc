@@ -123,3 +123,9 @@ eval "$(pyenv init - zsh)"
 
 # Vite+ bin (https://viteplus.dev)
 . "$HOME/.vite-plus/env"
+
+# direnv
+eval "$(direnv hook zsh)"
+
+# cargo
+export PATH="$HOME/.cargo/bin:$PATH"
