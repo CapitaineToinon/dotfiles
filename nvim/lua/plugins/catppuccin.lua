@@ -1,16 +1,3 @@
-return {
-	"catppuccin/nvim",
-	name = "catppuccin",
-	config = function()
-		require("catppuccin").setup({
-			auto_integrations = false,
-			integrations = {
-				telescope = {
-					enabled = true,
-				}
-			}
-		})
-
-		vim.cmd("colorscheme catppuccin-latte")
-	end,
-}
+vim.pack.add({
+	{ src = "https://github.com/catppuccin/nvim", name = "catppuccin" }
+})

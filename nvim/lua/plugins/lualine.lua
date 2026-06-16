@@ -1,17 +1,6 @@
-return {
-	{
-		'nvim-lualine/lualine.nvim',
-		dependencies = { 'nvim-tree/nvim-web-devicons', 'catppuccin/nvim' },
-		config = function()
-			local catppuccin = require('catppuccin.utils.lualine')
+vim.pack.add({
+	'https://github.com/nvim-tree/nvim-web-devicons',
+	'https://github.com/nvim-lualine/lualine.nvim'
+})
 
-			require('lualine').setup({
-				options = {
-					theme = catppuccin('latte'),
-					component_separators = "",
-					section_separators = { left = "", right = "" },
-				},
-			})
-		end
-	}
-}
+require('lualine').setup()
