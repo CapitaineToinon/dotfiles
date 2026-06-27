@@ -2,9 +2,6 @@ local keymap = vim.keymap.set
 
 vim.g.mapleader = " "
 
--- vim.pack
-keymap("n", "<leader>ps", "<cmd>lua vim.pack.update()<CR>")
-
 -- oil
 keymap("n", "<leader>o", "<cmd>Oil<CR>")
 
@@ -15,7 +12,7 @@ keymap("n", "cr", vim.lsp.buf.rename, { desc = "Code: [C]ode [R]ename" })
 keymap("n", "ca", vim.lsp.buf.code_action, { desc = "Code: [C]ode [A]ctions" })
 
 -- conform
-keymap("n", "<leader>p", function()
+keymap("n", "<leader>i", function()
 	require("conform").format({ async = true })
 end)
 
@@ -44,6 +41,29 @@ end, { desc = "Telescope find files" })
 keymap("n", "<leader>g", builtin.live_grep, { desc = "Telescope live grep" })
 keymap("n", "<leader>b", builtin.buffers, { desc = "Telescope buffers" })
 keymap("n", "<leader>s", builtin.lsp_document_symbols, { desc = "Telescope symbols" })
+
+-- harpoon
+local harpoon = require("harpoon")
+
+vim.keymap.set("n", "<leader>a", function()
+	harpoon:list():add()
+end)
+vim.keymap.set("n", "<leader>p", function()
+	harpoon.ui:toggle_quick_menu(harpoon:list())
+end)
+
+vim.keymap.set("n", "<M-1>", function()
+	harpoon:list():select(1)
+end)
+vim.keymap.set("n", "<M-2>", function()
+	harpoon:list():select(2)
+end)
+vim.keymap.set("n", "<M-3>", function()
+	harpoon:list():select(3)
+end)
+vim.keymap.set("n", "<M-4>", function()
+	harpoon:list():select(4)
+end)
 
 -- lazygit
 keymap("n", "<leader>lg", "<cmd>LazyGit<CR>")
