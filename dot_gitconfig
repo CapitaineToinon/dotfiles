@@ -1,0 +1,7 @@
+[user]
+	email = capitainetoinon@proton.me
+	name = CapitaineToinon
+[pull]
+	rebase = false
+[init]
+	defaultBranch = main
