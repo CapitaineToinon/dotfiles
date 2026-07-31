@@ -9,12 +9,13 @@ PASSWORD=$(pass-cli item view --vault-name Personal --item-title "Synology Home"
 gum log --level info "Credentials fetched"
 
 CREDS_FILE="/etc/samba/credentials.synology"
-gum spin --title "Writing credentials file..." -- bash -c "
-    sudo mkdir -p /etc/samba
-    printf 'username=%s\npassword=%s\n' '$USERNAME' '$PASSWORD' | sudo tee '$CREDS_FILE' > /dev/null
-    sudo chmod 600 '$CREDS_FILE'
-    sudo chown root:root '$CREDS_FILE'
-"
+
+gum log --level info "Writing credentials file..."
+sudo mkdir -p /etc/samba
+printf 'username=%s\npassword=%s\n' '$USERNAME' '$PASSWORD' | sudo tee '$CREDS_FILE' > /dev/null
+sudo chmod 600 '$CREDS_FILE'
+sudo chown root:root '$CREDS_FILE'
+
 gum log --level info "Credentials written to $CREDS_FILE"
 
 gum log --level info "Creating mount points..."
@@ -31,19 +32,22 @@ grep -q "home.capitainetoinon.ch/dog" /etc/fstab || \
 grep -q "home.capitainetoinon.ch/home" /etc/fstab || \
     echo "//home.capitainetoinon.ch/home /mnt/home cifs $OPTS 0 0" | sudo tee -a /etc/fstab > /dev/null
 
-gum spin --title "Reloading systemd..." -- sudo systemctl daemon-reload
+gum log --level info "Reloading systemd..."
+sudo systemctl daemon-reload
 
 if mountpoint -q /mnt/dog; then
     gum log --level warn "/mnt/dog already mounted, skipping"
 else
-    gum spin --title "Mounting /mnt/dog..." -- sudo mount /mnt/dog
+    gum log --level info "Mounting /mnt/dog..."
+	sudo mount /mnt/dog
     gum log --level info "Mounted /mnt/dog"
 fi
 
 if mountpoint -q /mnt/home; then
     gum log --level warn "/mnt/home already mounted, skipping"
 else
-    gum spin --title "Mounting /mnt/home..." -- sudo mount /mnt/home
+    gum log --level info "Mounting /mnt/home..."
+	sudo mount /mnt/home
     gum log --level info "Mounted /mnt/home"
 fi
 

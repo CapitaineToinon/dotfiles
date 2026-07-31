@@ -110,8 +110,8 @@ alias lg="lazygit"
 # laravel sail
 alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
 
-# fast node manager (removed for now in favor of vite+)
-# eval "$(fnm env --use-on-cd --shell zsh)"
+# fast node manager
+eval "$(fnm env --use-on-cd --shell zsh)"
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -120,9 +120,6 @@ eval "$(pyenv init - zsh)"
 
 # ready
 . "$HOME/.local/bin/env"
-
-# Vite+ bin (https://viteplus.dev)
-. "$HOME/.vite-plus/env"
 
 # direnv
 eval "$(direnv hook zsh)"
