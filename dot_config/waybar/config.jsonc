@@ -26,8 +26,8 @@
   },
   "clock": {
     // "timezone": "America/New_York",
-    "tooltip": false,
     "format": "{:%A %H:%M}",
+    "tooltip-format": "{:%A, %B %d, %Y}"
   },
   "battery": {
     "states": {
