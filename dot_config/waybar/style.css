@@ -1,9 +1,9 @@
 * {
   /* `otf-font-awesome` is required to be installed for icons */
   font-family:
-    FiraMono Nerd Font,
+    Maple Mono,
     serif;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 window#waybar {
