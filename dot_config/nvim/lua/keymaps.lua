@@ -12,7 +12,7 @@ keymap("n", "cr", vim.lsp.buf.rename, { desc = "Code: [C]ode [R]ename" })
 keymap("n", "ca", vim.lsp.buf.code_action, { desc = "Code: [C]ode [A]ctions" })
 
 -- conform
-keymap("n", "<leader>i", function()
+keymap("n", "<leader>cf", function()
 	require("conform").format({ async = true })
 end)
 

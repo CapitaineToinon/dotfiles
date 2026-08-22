@@ -8,4 +8,4 @@ opt.showmode = false -- already shown in the statusline
 opt.relativenumber = true -- show relative line numbers
 opt.clipboard = "unnamedplus" -- use system clipboard
 
-vim.cmd.colorscheme("catppuccin-nvim")
+vim.cmd.colorscheme("catppuccin")

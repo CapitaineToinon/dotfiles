@@ -10,6 +10,10 @@ require("conform").setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
 		blade = { "blade-formatter" },
-		svelte = { "prettierd" },
+		svelte = { "prettier" },
+		typescript = { "prettier" },
+		javascript = { "prettier" },
+		html = { "prettier" },
+		css = { "prettier" },
 	},
 })
