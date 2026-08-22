@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# don't set -e, as we want to be able to check the exit code
+# returned by the fzf-tmux command
+
+SESSION=$(sesh list --icons --hide-attached | fzf-tmux -p 80%,70% \
+		--no-sort --ansi --border-label ' sesh ' --prompt '⚡  ' \
+		--header '^x tmux kill' \
+		--bind 'tab:down,btab:up' \
+		--bind 'ctrl-x:execute(tmux kill-session -t {2..})+change-prompt(⚡  )+reload(sesh list --icons)' \
+		--reverse
+)
+
+# if error code is 130, then action was cancelled
+if [ $? -eq 130 ]; then
+	exit
+fi
+
+# otherwise connect to the session
+sesh connect "$SESSION"
+
