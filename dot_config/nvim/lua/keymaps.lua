@@ -3,7 +3,7 @@ local keymap = vim.keymap.set
 vim.g.mapleader = " "
 
 -- oil
-keymap("n", "<leader>o", "<cmd>Oil<CR>")
+keymap("n", "<leader>o", "<cmd>Oil<CR>", { desc = "File Explorer ([O]il)" })
 
 -- lsp
 keymap("n", "gd", require("telescope.builtin").lsp_definitions, { desc = "[G]oto [D]efinition" })
@@ -14,7 +14,7 @@ keymap("n", "ca", vim.lsp.buf.code_action, { desc = "Code: [C]ode [A]ctions" })
 -- conform
 keymap("n", "<leader>cf", function()
 	require("conform").format({ async = true })
-end)
+end, { desc = "[C]onform [F]ormat" })
 
 -- telescope
 local builtin = require("telescope.builtin")
@@ -36,37 +36,14 @@ keymap("n", "<leader>f", function()
 	else
 		require("telescope.builtin").find_files()
 	end
-end, { desc = "Telescope find files" })
+end, { desc = "Telescope Find [F]iles" })
 
-keymap("n", "<leader>g", builtin.live_grep, { desc = "Telescope live grep" })
-keymap("n", "<leader>b", builtin.buffers, { desc = "Telescope buffers" })
-keymap("n", "<leader>s", builtin.lsp_document_symbols, { desc = "Telescope symbols" })
-
--- harpoon
-local harpoon = require("harpoon")
-
-vim.keymap.set("n", "<leader>a", function()
-	harpoon:list():add()
-end)
-vim.keymap.set("n", "<leader>p", function()
-	harpoon.ui:toggle_quick_menu(harpoon:list())
-end)
-
-vim.keymap.set("n", "<M-1>", function()
-	harpoon:list():select(1)
-end)
-vim.keymap.set("n", "<M-2>", function()
-	harpoon:list():select(2)
-end)
-vim.keymap.set("n", "<M-3>", function()
-	harpoon:list():select(3)
-end)
-vim.keymap.set("n", "<M-4>", function()
-	harpoon:list():select(4)
-end)
+keymap("n", "<leader>g", builtin.live_grep, { desc = "Telescope Live [G]rep" })
+keymap("n", "<leader>b", builtin.buffers, { desc = "Telescope [B]uffers" })
+keymap("n", "<leader>s", builtin.lsp_document_symbols, { desc = "Telescope [S]ymbols" })
 
 -- lazygit
-keymap("n", "<leader>lg", "<cmd>LazyGit<CR>")
+keymap("n", "<leader>lg", "<cmd>LazyGit<CR>", { desc = "[L]azy [G]it" })
 
 -- tree-sitter manager
-keymap("n", "<leader>tsm", "<cmd>TSManager<CR>")
+keymap("n", "<leader>tsm", "<cmd>TSManager<CR>", { desc = "[T]ree-[S]itter [M]anager" })
