@@ -1,0 +1,18 @@
+#!/bin/bash
+
+set -e
+
+THEME=$(gsettings get org.gnome.desktop.interface color-scheme)
+
+# ready to set light theme
+VICINAE="catppuccin-latte"
+GNOME="prefer-light"
+
+if [ "$THEME" == "'prefer-light'" ]; then
+		# switch to dark theme instead
+		VICINAE="catppuccin-mocha"
+		GNOME="'prefer-dark'"
+fi
+
+gsettings set org.gnome.desktop.interface color-scheme $GNOME
+vicinae vicinae://theme/set/$VICINAE

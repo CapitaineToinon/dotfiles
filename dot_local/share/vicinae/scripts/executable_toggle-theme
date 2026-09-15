@@ -1,0 +1,6 @@
+#!/bin/bash
+# @vicinae.schemaVersion 1
+# @vicinae.title Toggle Theme
+# @vicinae.mode silent
+
+bash ~/scripts/toggle-theme
