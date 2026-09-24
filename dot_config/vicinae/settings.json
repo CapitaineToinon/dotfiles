@@ -43,12 +43,14 @@
       "rounding": 0,
       "opacity": 1,
       "client_side_decorations": {
-         "enabled": true,
+         "enabled": false,
          "border_width": 1
       },
+      "floating_status_bar": false,
       "layer_shell": {
-         "enabled": false
-      }
+         "enabled": true
+      },
+      "material": "none"
    },
    "providers": {
       "wm": {
