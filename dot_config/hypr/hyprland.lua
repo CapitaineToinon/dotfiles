@@ -13,33 +13,7 @@
 ---- MONITORS ----
 ------------------
 
--- See https://wiki.hypr.land/Configuring/Basics/Monitors/
-
--- Thinkpad internal display
-hl.monitor({
-	output = "eDP-1",
-	mode = "2880x1800@120",
-	position = "auto",
-	scale = "auto",
-})
-
--- Gigabyte home external display
-hl.monitor({
-	output = "desc:GIGA-BYTE TECHNOLOGY CO. LTD. M27Q 20460B003499",
-	mode = "2560x1440@170",
-	position = "auto",
-	scale = "auto",
-})
-
--- Default sensible config for HDMI out, mirroring
--- the Thinkpad internal display
-hl.monitor({
-	output = "HDML-A-1",
-	mode = "preferred",
-	position = "auto",
-	scale = 1,
-	mirror = "eDP-1",
-})
+require("monitors")
 
 ---------------------
 ---- MY PROGRAMS ----
@@ -247,7 +221,7 @@ hl.config({
 		sensitivity = 0, -- -1.0 - 1.0, 0 means no modification.
 
 		touchpad = {
-			natural_scroll = true,
+			natural_scroll = false,
 		},
 
 		-- Disable touch screens on Thinkpad laptop
@@ -409,6 +383,13 @@ hl.layer_rule({
 	match = { namespace = "vicinae" },
 	name = "vicinae-no-animation",
 	no_anim = true,
+})
+
+-- Move vicinae to its own workspace
+hl.window_rule({
+	name = "move-vicinae",
+	match = { class = "vicinae" },
+	workspace = "special:vicinae",
 })
 
 -- Automatically make PiP pinned and floating
