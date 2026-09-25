@@ -12,6 +12,7 @@
    "$schema": "https://vicinae.com/schemas/config.json",
    "close_on_focus_loss": false,
    "pop_to_root_on_close": true,
+   "escape_key_behavior": "",
    "favicon_service": "google",
    "search_files_in_root": true,
    "tray": {
@@ -23,7 +24,7 @@
    "font": {
       "rendering": "qt",
       "normal": {
-         "family": "FiraMono Nerd Font",
+         "family": "Maple Mono",
          "size": 10
       }
    },
@@ -32,7 +33,7 @@
          "name": "catppuccin-latte"
       },
       "dark": {
-         "name": "catppuccin-mocha",
+         "name": "gruvbox-dark",
          "icon_theme": "Adwaita"
       }
    },
@@ -48,7 +49,7 @@
       },
       "floating_status_bar": false,
       "layer_shell": {
-         "enabled": true
+         "enabled": false
       },
       "material": "none"
    },
