@@ -35,6 +35,7 @@ local browser = "firefox"
 -- Or execute your favorite apps at launch like this:
 --
 hl.on("hyprland.start", function()
+	hl.exec_cmd("hyprpaper")
 	hl.exec_cmd("waybar")
 	hl.exec_cmd("nm-applet")
 	hl.exec_cmd("hyprpaper")
@@ -68,9 +69,9 @@ hl.env("HYPRCURSOR_SIZE", "24")
 -- for security reasons
 
 -- hl.config({
---   ecosystem = {
---     enforce_permissions = true,
---   },
+-- 	ecosystem = {
+-- 		enforce_permissions = true,
+-- 	},
 -- })
 
 -- hl.permission("/usr/(bin|local/bin)/grim", "screencopy", "allow")
@@ -87,11 +88,11 @@ hl.config({
 		gaps_in = 0,
 		gaps_out = 0,
 
-		border_size = 3,
+		border_size = 2,
 
 		col = {
-			active_border = { colors = { "rgb(33ccff)", "rgb(00ff99)" }, angle = 45 },
-			inactive_border = "rgb(595959)",
+			active_border = "#fabd2f",
+			inactive_border = "#928374",
 		},
 
 		-- Set to true to enable resizing windows by clicking and dragging on borders and gaps
@@ -101,11 +102,18 @@ hl.config({
 		allow_tearing = false,
 
 		layout = "dwindle",
+
+		snap = {
+			enabled = true,
+		},
 	},
 
 	decoration = {
 		rounding = 0,
 		rounding_power = 2,
+
+		-- background dim when opening a special workspace
+		dim_special = 0.65,
 
 		-- Change transparency of focused and unfocused windows
 		active_opacity = 1.0,
@@ -124,52 +132,6 @@ hl.config({
 		enabled = false,
 	},
 })
-
--- Default curves and animations, see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Animations/
-hl.curve("easeOutQuint", { type = "bezier", points = { { 0.23, 1 }, { 0.32, 1 } } })
-hl.curve("easeInOutCubic", { type = "bezier", points = { { 0.65, 0.05 }, { 0.36, 1 } } })
-hl.curve("linear", { type = "bezier", points = { { 0, 0 }, { 1, 1 } } })
-hl.curve("almostLinear", { type = "bezier", points = { { 0.5, 0.5 }, { 0.75, 1 } } })
-hl.curve("quick", { type = "bezier", points = { { 0.15, 0 }, { 0.1, 1 } } })
-
--- Default springs
-hl.curve("easy", { type = "spring", mass = 1, stiffness = 238.1191, dampening = 24.21279333 })
-
-hl.animation({ leaf = "global", enabled = true, speed = 10, bezier = "default" })
-hl.animation({ leaf = "border", enabled = true, speed = 5.39, bezier = "easeOutQuint" })
-hl.animation({ leaf = "windows", enabled = true, speed = 4.79, spring = "easy" })
-hl.animation({ leaf = "windowsIn", enabled = true, speed = 4.1, spring = "easy", style = "popin 87%" })
-hl.animation({ leaf = "windowsOut", enabled = true, speed = 1.49, bezier = "linear", style = "popin 87%" })
-hl.animation({ leaf = "fadeIn", enabled = true, speed = 1.73, bezier = "almostLinear" })
-hl.animation({ leaf = "fadeOut", enabled = true, speed = 1.46, bezier = "almostLinear" })
-hl.animation({ leaf = "fade", enabled = true, speed = 3.03, bezier = "quick" })
-hl.animation({ leaf = "layers", enabled = true, speed = 3.81, bezier = "easeOutQuint" })
-hl.animation({ leaf = "layersIn", enabled = true, speed = 4, bezier = "easeOutQuint", style = "fade" })
-hl.animation({ leaf = "layersOut", enabled = true, speed = 1.5, bezier = "linear", style = "fade" })
-hl.animation({ leaf = "fadeLayersIn", enabled = true, speed = 1.79, bezier = "almostLinear" })
-hl.animation({ leaf = "fadeLayersOut", enabled = true, speed = 1.39, bezier = "almostLinear" })
-hl.animation({ leaf = "workspaces", enabled = true, speed = 1.94, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "workspacesIn", enabled = true, speed = 1.21, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "workspacesOut", enabled = true, speed = 1.94, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "zoomFactor", enabled = true, speed = 7, bezier = "quick" })
-
--- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
--- "Smart gaps" / "No gaps when only"
--- uncomment all if you wish to use that.
--- hl.workspace_rule({ workspace = "w[tv1]", gaps_out = 0, gaps_in = 0 })
--- hl.workspace_rule({ workspace = "f[1]", gaps_out = 0, gaps_in = 0 })
--- hl.window_rule({
--- 	name = "no-gaps-wtv1",
--- 	match = { float = false, workspace = "w[tv1]" },
--- 	border_size = 0,
--- 	rounding = 0,
--- })
--- hl.window_rule({
--- 	name = "no-gaps-f1",
--- 	match = { float = false, workspace = "f[1]" },
--- 	border_size = 0,
--- 	rounding = 0,
--- })
 
 -- See https://wiki.hypr.land/Configuring/Layouts/Dwindle-Layout/ for more
 hl.config({
@@ -199,6 +161,7 @@ hl.config({
 
 hl.config({
 	misc = {
+		focus_on_activate = false,
 		force_default_wallpaper = 0, -- Set to 0 or 1 to disable the anime mascot wallpapers
 		disable_hyprland_logo = false, -- If true disables the random hyprland logo / anime girl background. :(
 	},
@@ -240,7 +203,13 @@ hl.gesture({
 -- Example per-device config
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Devices/ for more
 hl.device({
-	name = "lemokey-lemokey-g1",
+	name = "lemokey-lemokey-g1,",
+	sensitivity = -0.8,
+})
+
+-- Second mouse for work
+hl.device({
+	name = "keychron-keychron-v1-mouse",
 	sensitivity = -0.8,
 })
 
@@ -340,6 +309,14 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 
 -- See https://wiki.hypr.land/Configuring/Basics/Window-Rules/
 -- and https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
+
+hl.on("workspace.active", function()
+	local workspace = hl.get_active_special_workspace()
+
+	if workspace ~= nil and workspace.name == "special:vicinae" then
+		hl.exec_cmd("vicinae close")
+	end
+end)
 
 -- Example window rules that are useful
 hl.window_rule({
