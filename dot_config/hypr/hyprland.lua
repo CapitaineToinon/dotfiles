@@ -113,7 +113,7 @@ hl.config({
 		rounding_power = 2,
 
 		-- background dim when opening a special workspace
-		dim_special = 0.65,
+		dim_special = 0.8,
 
 		-- Change transparency of focused and unfocused windows
 		active_opacity = 1.0,
@@ -270,7 +270,7 @@ hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Screenshot things
-hl.bind(mainMod .. " + S", hl.dsp.exec_cmd('grim -g "$(slurp)" - | wl-copy'))
+hl.bind(mainMod .. " + S", hl.dsp.exec_cmd('grim -g "$(slurp -b 000000CC -c fabd2f -w 3)" - | wl-copy'))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd('grim -g "$(slurp)" - | swappy -f -'))
 
 -- Laptop multimedia keys for volume and LCD brightness
@@ -367,6 +367,13 @@ hl.window_rule({
 	name = "move-vicinae",
 	match = { class = "vicinae" },
 	workspace = "special:vicinae",
+})
+
+-- move firefox save windows
+hl.window_rule({
+	name = "move-firefox-popups",
+	match = { class = "xdg-desktop-portal-gtk", title = "^Save As.+ — Mozilla Firefox$" },
+	center = true,
 })
 
 -- Automatically make PiP pinned and floating
