@@ -14,5 +14,6 @@ if [ "$THEME" == "'prefer-light'" ]; then
 		GNOME="'prefer-dark'"
 fi
 
+gsettings set org.gnome.desktop.interface gtk-theme $GNOME
 gsettings set org.gnome.desktop.interface color-scheme $GNOME
 vicinae vicinae://theme/set/$VICINAE
