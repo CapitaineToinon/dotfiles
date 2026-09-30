@@ -33,7 +33,7 @@
          "name": "catppuccin-latte"
       },
       "dark": {
-         "name": "gruvbox-dark",
+         "name": "gruvbox-light",
          "icon_theme": "Adwaita"
       }
    },
@@ -53,7 +53,38 @@
       },
       "material": "none"
    },
+   "favorites": [
+      "media:play-pause"
+   ],
    "providers": {
+      "power": {
+         "entrypoints": {
+            "hibernate": {
+               "enabled": false
+            },
+            "lock": {
+               "enabled": false
+            },
+            "logout": {
+               "enabled": false
+            },
+            "power-off": {
+               "preferences": {
+                  "confirm": true,
+                  "customProgram": ""
+               }
+            },
+            "sleep": {
+               "enabled": false
+            },
+            "soft-reboot": {
+               "enabled": false
+            },
+            "suspend": {
+               "enabled": false
+            }
+         }
+      },
       "wm": {
          "entrypoints": {
             "switch-windows": {
