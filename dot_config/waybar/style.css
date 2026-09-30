@@ -6,45 +6,41 @@
   font-size: 14px;
 }
 
-window#waybar {
-  background-color: rgba(43, 48, 59, 1);
-  color: #ffffff;
-}
-
-window#waybar.hidden {
-  opacity: 0.2;
-}
-
 button {
-  /* Avoid rounded borders under each button name */
-  border: none;
+  border: 0;
   border-radius: 0;
 }
 
-#workspaces button {
-  padding: 0 5px;
-  background-color: transparent;
-  color: #ffffff;
+window#waybar {
+  color: #eddbb2;
+  background-color: #282828;
 }
 
-/* to disable some default styles */
 #workspaces button {
-  background: none;
   text-shadow: none;
   box-shadow: none;
   transition: none;
   -gtk-icon-shadow: none;
   -gtk-icon-effect: none;
+  padding: 0 4px;
+  background-color: transparent;
+  color: #ffffff;
+  border-top: 2px;
+  border-bottom: 2px;
+  border-style: solid;
+  border-top-color: #282828;
+  border-bottom-color: #282828;
 }
-/* end */
 
 #workspaces button.focused,
 #workspaces button.active {
-  background-color: #64727d;
+  color: #282828;
+  background: #fabd2f;
+  border-top-color: #fabd2f;
 }
 
 #workspaces button.urgent {
-  background-color: #eb4d4b;
+  background-color: #cc241d;
 }
 
 #clock,
@@ -85,13 +81,6 @@ button {
   /* background-color: #26a65b; */
 }
 
-@keyframes blink {
-  to {
-    background-color: #ffffff;
-    color: #000000;
-  }
-}
-
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
   background-color: #f53c3c;
@@ -130,7 +119,6 @@ label:focus {
 }
 
 #custom-notification {
-  padding-top: 2px;
   padding-right: 10px;
 }
 
