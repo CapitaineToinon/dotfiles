@@ -128,6 +128,10 @@ hl.config({
 		},
 	},
 
+	cursor = {
+		inactive_timeout = 5,
+	},
+
 	animations = {
 		enabled = false,
 	},
@@ -136,6 +140,7 @@ hl.config({
 -- See https://wiki.hypr.land/Configuring/Layouts/Dwindle-Layout/ for more
 hl.config({
 	dwindle = {
+		force_split = 2,
 		preserve_split = true, -- You probably want this
 	},
 })
@@ -225,6 +230,17 @@ hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
+
+-- discord is giga slow
+hl.bind(mainMod .. " + D", function()
+	local window = hl.get_window("class:discord")
+
+	if window ~= nil then
+		return hl.dispatch(hl.dsp.focus({ window = window }))
+	end
+
+	return hl.exec_cmd("discord")
+end)
 
 -- swaync
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client --toggle-panel --skip-wait"))
